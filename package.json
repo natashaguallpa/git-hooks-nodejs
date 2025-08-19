@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "prepare": "husky"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
@@ -14,7 +13,9 @@
     "husky": "^4.3.8",
     "jest": "^30.0.5"
   },
-  "pre-commit": [
-    "test"
-  ]
+  "husky": {
+    "hooks": {
+    "pre-commit": "npm test"
+  }
+}
 }
