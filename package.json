@@ -18,11 +18,19 @@
     "eslint-plugin-import": "^2.32.0",
     "globals": "^16.3.0",
     "husky": "^4.3.8",
-    "jest": "^30.0.5"
+    "jest": "^30.0.5",
+    "lint-staged": "^16.1.5"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm test && npm run lint "
+      "pre-commit": "lint-staged"
     }
+  },
+
+  "lint-staged":{
+    "*.js": [
+      "eslint",
+      "jest --findRelatedTests"
+    ]
   }
 }
