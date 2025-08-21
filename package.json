@@ -4,18 +4,25 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint src/**",
+    "lint-fix": "eslint . --fix"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@eslint/js": "^9.33.0",
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.32.0",
+    "globals": "^16.3.0",
     "husky": "^4.3.8",
     "jest": "^30.0.5"
   },
   "husky": {
     "hooks": {
-    "pre-commit": "npm test"
+      "pre-commit": "npm test && npm run lint "
+    }
   }
-}
 }
